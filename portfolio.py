@@ -65,13 +65,22 @@ st.markdown(
 # Sidebar with radio button navigation
 page = st.sidebar.radio("Go to", ["Home", "About Me", "Skills", "Projects", "Contact"])
 
-# Function to convert image to base64
-def get_base64_image(image_path):
-    with open(image_path, "rb") as img_file:
-        return base64.b64encode(img_file.read()).decode()
 
-# Convert the profile image to base64
-image_base64 = get_base64_image(r"C:\Users\uwais\Documents\WhatsApp Image 2024-08-06 at 10.01.51_cd4aaabb.jpg")
+
+# Function to get base64 image
+def get_base64_image(image_path):
+    try:
+        with open(image_path, "rb") as img_file:
+            return base64.b64encode(img_file.read()).decode()
+    except FileNotFoundError:
+        return ""
+
+
+# Profile Image
+image_base64 = get_base64_image(r"C:\Users\uwais\Documents\WhatsApp Image 2024-08-06 at 10.01.51_cd4aaabb.jpg")        
+
+
+
 
 # Main content based on selection
 if page == "Home":
