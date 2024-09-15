@@ -371,7 +371,7 @@ elif page == "Projects":
 
     # Project 1: YouTube Spam Detection
     st.markdown("<div class='project-section'>", unsafe_allow_html=True)
-    st.markdown("<h3>YouTube Spam Detection</h3>", unsafe_allow_html=True)
+    st.markdown("<h3>Gold price web</h3>", unsafe_allow_html=True)
     
     st.image("C:/Users/uwais/Downloads/youtubesapm.jpg", caption="Spam Detection Chart", width=600)  # Fixed width
     
