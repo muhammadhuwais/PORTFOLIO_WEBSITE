@@ -5,6 +5,7 @@ import base64
 # Set page configuration
 st.set_page_config(page_title="Uwais' Portfolio", layout="wide", page_icon=":star:")
 
+
 # Inject custom CSS for sidebar styling
 st.markdown(
     """
@@ -71,7 +72,6 @@ def get_base64_image(image_path):
 
 # Convert the profile image to base64
 image_base64 = get_base64_image(r"C:\Users\uwais\Documents\WhatsApp Image 2024-08-06 at 10.01.51_cd4aaabb.jpg")
-image_base64 = get_base64_image(r'images/WhatsApp_Image_2024-08-06.jpg')
 
 # Main content based on selection
 if page == "Home":
