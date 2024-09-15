@@ -77,8 +77,7 @@ def get_base64_image(image_path):
 
 
 # Profile Image
-image_base64 = get_base64_image(r"C:\Users\uwais\Documents\WhatsApp Image 2024-08-06 at 10.01.51_cd4aaabb.jpg")        
-
+image_base64 = get_base64_image(r"C:\Users\uwais\Downloads\motivational-theme-vp11.jpg")        
 
 
 
