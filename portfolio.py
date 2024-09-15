@@ -368,7 +368,7 @@ elif page == "Projects":
     # Project 2: Diabetes Prediction App
     st.markdown("<div class='project-section'>", unsafe_allow_html=True)
     st.markdown("<h3>Diabetes Prediction App</h3>", unsafe_allow_html=True)
-    st.image("", caption="Diabetes Prediction App", width=600)
+    st.image(r"C:\Users\uwais\Downloads\Diabetes.jpg", caption="Diabetes Prediction App", width=600)
     st.markdown("""
     <p>This is a web application that predicts diabetes based on input data. It was built with Streamlit and Scikit-learn.</p>
     <a href="https://github.com/uwais/Diabetes-Prediction-App" target="_blank">View GitHub Repository</a>
