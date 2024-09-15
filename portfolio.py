@@ -71,6 +71,7 @@ def get_base64_image(image_path):
 
 # Convert the profile image to base64
 image_base64 = get_base64_image(r"C:\Users\uwais\Documents\WhatsApp Image 2024-08-06 at 10.01.51_cd4aaabb.jpg")
+image_base64 = get_base64_image(r'images/WhatsApp_Image_2024-08-06.jpg')
 
 # Main content based on selection
 if page == "Home":
@@ -78,28 +79,28 @@ if page == "Home":
     col1, col2 = st.columns([1, 2])
 
     with col1:
-        st.markdown(f"""
+         st.markdown(f"""
     <style>
-        .profile-pic {{
-            width: 250px;  /* Fixed large size */
-            height: 250px; /* Fixed large size */
-            border-radius: 50%;  /* Ensures circular shape */
-            object-fit: cover;  /* Ensures image covers the container */
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);  /* Shadow for depth */
-            border: 5px solid #3498db;  /* Blue border */
-        }}
-        .center {{
-            display: flex;
-            justify-content: center;
-            align-items: center;  /* Center vertically */
-            height: 100%;  /* Full height to center image */
-        }}
+    .profile-pic {{
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+        border: 5px solid #3498db;
+    }}
+    .center {{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }}
     </style>
-
     <div class="center">
         <img src="data:image/png;base64,{image_base64}" class="profile-pic"/>
     </div>
     """, unsafe_allow_html=True)
+
 
     with col2:
         st.markdown("""
