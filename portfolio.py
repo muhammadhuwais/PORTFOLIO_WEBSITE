@@ -305,91 +305,78 @@ elif page == "Skills":
 elif page == "Projects":
     st.markdown("""
     <style>
-    .projects-section {
-        background-color: #ffffff;
-        border-radius: 15px;
-        padding: 20px;
-        margin-top: 20px;
+    .project-section {
+        background: linear-gradient(135deg, #e0f7fa, #e0f4f4);  /* Light gradient background */
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 30px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);  /* Deeper shadow for cards */
+        transition: transform 0.2s;  /* Hover effect */
     }
 
-    .projects-section h2 {
+    .project-section:hover {
+        transform: translateY(-10px);  /* Lift effect on hover */
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-section h3 {
         font-family: 'Arial', sans-serif;
-        font-size: 36px;
-        color: #333;
-        text-align: center;
-        margin-bottom: 20px;
-        font-weight: 700;  /* Bold */
-    }
-
-    .project {
-        margin-bottom: 20px;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .project img {
-        width: 100%;
-        border-radius: 10px;
-        object-fit: cover;
+        font-size: 30px;
+        color: #1E90FF;  /* Light blue for headings */
         margin-bottom: 15px;
+        font-weight: 700;
+        text-align: center;
     }
 
-    .project h3 {
+    .project-section p {
         font-family: 'Arial', sans-serif;
-        font-size: 24px;
-        color: #333;
-        margin-bottom: 10px;
+        font-size: 16px;
+        color: #444;
+        line-height: 1.8;
+        margin-bottom: 15px;
+        text-align: justify;
     }
 
-    .project p {
-        font-family: 'Arial', sans-serif;
-        font-size: 18px;
-        color: #555;
-        margin-bottom: 10px;
-    }
-
-    .project a {
+    .project-section a {
         display: inline-block;
         padding: 10px 20px;
         background-color: #1E90FF;
-        color: #ffffff;
-        text-decoration: none;
+        color: white;
         border-radius: 5px;
-        font-size: 16px;
-        font-weight: 600;
+        text-decoration: none;
+        font-weight: bold;
+        text-align: center;
     }
 
-    .project a:hover {
-        background-color: #0d47a1;
+    .project-section a:hover {
+        background-color: #104E8B;  /* Darker blue on hover */
     }
+
     </style>
-
-    <div class="projects-section">
-        <h2>Projects</h2>
-
-        <div class="project">
-            <h3>Project 1: YouTube Spam Detection</h3>
-            <img src="https://example.com/project1_image.jpg" alt="Project 1 Image"/>
-            <p>This project involves detecting spam comments on YouTube using machine learning techniques. The application performs exploratory data analysis (EDA) and applies various models to classify comments.</p>
-            <a href="https://example.com/project1">View Project</a>
-        </div>
-
-        <div class="project">
-            <h3>Project 2: Diabetes Prediction</h3>
-            <img src="https://example.com/project2_image.jpg" alt="Project 2 Image"/>
-            <p>A machine learning model built to predict diabetes based on various health-related metrics. The model is deployed using Streamlit for interactive user inputs and predictions.</p>
-            <a href="https://example.com/project2">View Project</a>
-        </div>
-
-        <div class="project">
-            <h3>Project 3: IPL Match Outcome Prediction</h3>
-            <img src="https://example.com/project3_image.jpg" alt="Project 3 Image"/>
-            <p>This project predicts the outcome of IPL matches using historical match data and machine learning algorithms. It includes feature engineering and model evaluation.</p>
-            <a href="https://example.com/project3">View Project</a>
-        </div>
-    </div>
     """, unsafe_allow_html=True)
+
+    # Project 1: YouTube Spam Detection
+    st.markdown("<div class='project-section'>", unsafe_allow_html=True)
+    st.markdown("<h3>YouTube Spam Detection</h3>", unsafe_allow_html=True)
+    st.image(r"C:/Users/uwais/Downloads/youtubesapm.jpg", caption="Spam Detection Chart", width=600)
+    st.markdown("""
+    <p>This project uses machine learning to detect spam in YouTube comments. I performed exploratory data analysis and deployed the model using Streamlit.</p>
+    <a href="https://diabitiesapp-kcfogtrhm7z5mi8kp35ty2.streamlit.app/" target="_blank">View GitHub Repository</a>
+    """, unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    # Project 2: Diabetes Prediction App
+    st.markdown("<div class='project-section'>", unsafe_allow_html=True)
+    st.markdown("<h3>Diabetes Prediction App</h3>", unsafe_allow_html=True)
+    st.image("", caption="Diabetes Prediction App", width=600)
+    st.markdown("""
+    <p>This is a web application that predicts diabetes based on input data. It was built with Streamlit and Scikit-learn.</p>
+    <a href="https://github.com/uwais/Diabetes-Prediction-App" target="_blank">View GitHub Repository</a>
+    """, unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    # Add more projects following the same structure as above
+
 
 elif page == "Contact":
     st.markdown("""
