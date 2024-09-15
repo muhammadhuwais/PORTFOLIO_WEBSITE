@@ -1,11 +1,9 @@
 import streamlit as st
 from PIL import Image
-
+import base64
 
 # Set page configuration
 st.set_page_config(page_title="Uwais' Portfolio", layout="wide", page_icon=":star:")
-
-import streamlit as st
 
 # Inject custom CSS for sidebar styling
 st.markdown(
@@ -58,7 +56,6 @@ st.markdown(
     [data-testid="stSidebar"] .stRadio div {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    
     </style>
     """,
     unsafe_allow_html=True
@@ -66,21 +63,6 @@ st.markdown(
 
 # Sidebar with radio button navigation
 page = st.sidebar.radio("Go to", ["Home", "About Me", "Skills", "Projects", "Contact"])
-
-# Main content based on selection
-if page == "Home":
-    st.write("Welcome to the Home Page!")
-elif page == "About Me":
-    st.write("Here's more about me...")
-elif page == "Skills":
-    st.write("Skills I have...")
-elif page == "Projects":
-    st.write("Projects I've worked on...")
-elif page == "Contact":
-    st.write("Contact me here.")
-
-
-import base64
 
 # Function to convert image to base64
 def get_base64_image(image_path):
@@ -90,12 +72,10 @@ def get_base64_image(image_path):
 # Convert the profile image to base64
 image_base64 = get_base64_image(r"C:\Users\uwais\Documents\WhatsApp Image 2024-08-06 at 10.01.51_cd4aaabb.jpg")
 
-
+# Main content based on selection
 if page == "Home":
     # Home section with custom styling
     col1, col2 = st.columns([1, 2])
-
-    
 
     with col1:
         st.markdown(f"""
@@ -120,9 +100,6 @@ if page == "Home":
         <img src="data:image/png;base64,{image_base64}" class="profile-pic"/>
     </div>
     """, unsafe_allow_html=True)
-
-
-    
 
     with col2:
         st.markdown("""
@@ -191,7 +168,7 @@ elif page == "About Me":
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
     }
 
-   .about-section h2 {
+    .about-section h2 {
         font-family: 'Helvetica Neue', sans-serif;  /* Modern and professional font */
         font-size: 36px;
         color: #1E90FF;  /* Light blue for title */
@@ -199,7 +176,6 @@ elif page == "About Me":
         font-weight: 700;  /* Bold and professional */
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);  /* Shadow for title */
     }
-
 
     .about-section p {
         font-family: 'Arial', sans-serif;
@@ -218,7 +194,7 @@ elif page == "About Me":
 
     <div class="about-section">
         <h2>About Me</h2>
-        <p> i'am a passionate <strong> data scientiest</strong> actively working on the real-world projects. I graduated with a <strong>B.Com CA</strong> from <strong>Kamarajar University</strong>. I have a passion for machine learning, data analytics, and building web applications using Streamlit. I’m constantly learning and improving my skills in Python and data science.Currently, I’m focused on expanding my knowledge in areas like <strong> exploratory data analysis (EDA)</strong>, statistical testing <strong> (z-tests, t-tests)</strong>, and developing web applications using Streamlit to make data-driven solutions accessible. With expertise in handling real-world data, I strive to build innovative solutions to complex problems.</p>
+        <p>I am a passionate <strong>data scientist</strong> actively working on real-world projects. I graduated with a <strong>B.Com CA</strong> from <strong>Kamarajar University</strong>. I have a passion for machine learning, data analytics, and building web applications using Streamlit. I’m constantly learning and improving my skills in Python and data science. Currently, I’m focused on expanding my knowledge in areas like <strong>exploratory data analysis (EDA)</strong>, statistical testing <strong>(z-tests, t-tests)</strong>, and developing web applications using Streamlit to make data-driven solutions accessible. With expertise in handling real-world data, I strive to build innovative solutions to complex problems.</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -249,40 +225,22 @@ elif page == "Skills":
 
     .skills-grid div {
         background-color: #ffffff;
-        border: 1px solid #e0e0e0;  /* Soft border for distinction */
         border-radius: 10px;
         padding: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
-        transition: box-shadow 0.3s ease;  /* Subtle shadow transition on hover */
     }
 
-    .skills-grid div:hover {
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);  /* Elegant hover shadow */
-    }
-
-    .skills-grid h3 {
-        font-size: 22px;
-        color: #007BFF;  /* Professional blue accent */
-        margin-bottom: 15px;
-        font-weight: 600;  /* Lighter bold */
-    }
-
-    .skills-grid ul {
-        list-style: none;  /* No bullets */
-        padding: 0;
-    }
-
-    .skills-grid ul li {
-        font-size: 16px;
+    .skills-grid div p {
+        font-size: 20px;
         color: #555;
-        padding: 5px 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;  /* Center emoji and text */
+        margin: 0;
+        font-weight: 500;
     }
 
-    .skills-grid ul li span {
-        margin-right: 10px;  /* Space between emoji and text */
+    .skills-grid div i {
+        font-size: 30px;
+        color: #1E90FF;  /* Light blue for icons */
     }
     </style>
 
@@ -290,28 +248,28 @@ elif page == "Skills":
         <h2>Skills</h2>
         <div class="skills-grid">
             <div>
-                <h3>Programming</h3>
-                <ul>
-                    <li><span>🐍</span> Python</li>
-                    <li><span>🗄️</span> SQL</li>
-                    <li><span>📊</span> Excel</li>
-                </ul>
+                <i class="fas fa-code"></i>
+                <p>Python</p>
             </div>
             <div>
-                <h3>Libraries</h3>
-                <ul>
-                    <li><span>📚</span> Pandas</li>
-                    <li><span>🔢</span> NumPy</li>
-                    <li><span>🔍</span> Scikit-learn</li>
-                </ul>
+                <i class="fas fa-database"></i>
+                <p>Data Analysis</p>
             </div>
             <div>
-                <h3>Visualization</h3>
-                <ul>
-                    <li><span>📈</span> Matplotlib</li>
-                    <li><span>🌈</span> Seaborn</li>
-                    <li><span>📊</span> PowerBI</li>
-                </ul>
+                <i class="fas fa-chart-line"></i>
+                <p>Machine Learning</p>
+            </div>
+            <div>
+                <i class="fas fa-project-diagram"></i>
+                <p>Streamlit</p>
+            </div>
+            <div>
+                <i class="fas fa-cogs"></i>
+                <p>ETL</p>
+            </div>
+            <div>
+                <i class="fas fa-globe"></i>
+                <p>Digital Marketing</p>
             </div>
         </div>
     </div>
@@ -320,156 +278,139 @@ elif page == "Skills":
 elif page == "Projects":
     st.markdown("""
     <style>
-    .project-section {
-        background: linear-gradient(135deg, #f9f9f9, #e0f4f4);  /* Light gradient background */
-        border-radius: 12px;
-        padding: 25px;
-        margin-bottom: 30px;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);  /* Consistent shadow */
-        transition: transform 0.2s;  /* Hover effect */
+    .projects-section {
+        background-color: #ffffff;
+        border-radius: 15px;
+        padding: 20px;
+        margin-top: 20px;
     }
 
-    .project-section:hover {
-        transform: translateY(-10px);  /* Hover lift effect */
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    }
-
-    .project-section h3 {
+    .projects-section h2 {
         font-family: 'Arial', sans-serif;
-        font-size: 30px;
-        color: #1E90FF;  /* Light blue headings */
-        margin-bottom: 15px;
-        font-weight: 700;
+        font-size: 36px;
+        color: #333;
         text-align: center;
+        margin-bottom: 20px;
+        font-weight: 700;  /* Bold */
     }
 
-    .project-section p {
-        font-family: 'Arial', sans-serif;
-        font-size: 16px;
-        color: #444;
-        line-height: 1.8;
+    .project {
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .project img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
         margin-bottom: 15px;
-        text-align: justify;
     }
 
-    .project-section a {
+    .project h3 {
+        font-family: 'Arial', sans-serif;
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .project p {
+        font-family: 'Arial', sans-serif;
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    .project a {
         display: inline-block;
         padding: 10px 20px;
         background-color: #1E90FF;
-        color: white;
-        border-radius: 5px;
+        color: #ffffff;
         text-decoration: none;
-        font-weight: bold;
-        text-align: center;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 600;
     }
 
-    .project-section a:hover {
-        background-color: #104E8B;  /* Darker blue on hover */
+    .project a:hover {
+        background-color: #0d47a1;
     }
     </style>
+
+    <div class="projects-section">
+        <h2>Projects</h2>
+
+        <div class="project">
+            <h3>Project 1: YouTube Spam Detection</h3>
+            <img src="https://example.com/project1_image.jpg" alt="Project 1 Image"/>
+            <p>This project involves detecting spam comments on YouTube using machine learning techniques. The application performs exploratory data analysis (EDA) and applies various models to classify comments.</p>
+            <a href="https://example.com/project1">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>Project 2: Diabetes Prediction</h3>
+            <img src="https://example.com/project2_image.jpg" alt="Project 2 Image"/>
+            <p>A machine learning model built to predict diabetes based on various health-related metrics. The model is deployed using Streamlit for interactive user inputs and predictions.</p>
+            <a href="https://example.com/project2">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>Project 3: IPL Match Outcome Prediction</h3>
+            <img src="https://example.com/project3_image.jpg" alt="Project 3 Image"/>
+            <p>This project predicts the outcome of IPL matches using historical match data and machine learning algorithms. It includes feature engineering and model evaluation.</p>
+            <a href="https://example.com/project3">View Project</a>
+        </div>
+    </div>
     """, unsafe_allow_html=True)
-
-    # Project 1: YouTube Spam Detection
-    st.markdown("<div class='project-section'>", unsafe_allow_html=True)
-    st.markdown("<h3>Gold price web</h3>", unsafe_allow_html=True)
-    
-    st.image("C:/Users/uwais/Downloads/youtubesapm.jpg", caption="Spam Detection Chart", width=600)  # Fixed width
-    
-    st.markdown("""
-    <p>This project uses machine learning to detect spam in YouTube comments. I performed exploratory data analysis and deployed the model using Streamlit.</p>
-    <a href="https://diabitiesapp-kcfogtrhm7z5mi8kp35ty2.streamlit.app/" target="_blank">View GitHub Repository</a>
-    """, unsafe_allow_html=True)
-    st.markdown("</div>", unsafe_allow_html=True)
-
-    # Project 2: Diabetes Prediction App
-    st.markdown("<div class='project-section'>", unsafe_allow_html=True)
-    st.markdown("<h3>Diabetes Prediction App</h3>", unsafe_allow_html=True)
-    
-    st.image(r"C:\Users\uwais\Downloads\Diabetes.jpg", caption="Diabetes Prediction App", width=600)  # Fixed width
-    
-    st.markdown("""
-    <p>This is a web application that predicts diabetes based on input data. It was built with Streamlit and Scikit-learn.</p>
-    <a href="https://diabitiesapp-kcfogtrhm7z5mi8kp35ty2.streamlit.app" target="_blank">View GitHub Repository</a>
-    """, unsafe_allow_html=True)
-    st.markdown("</div>", unsafe_allow_html=True)
-
-    # You can add more projects here, following the same structure
-
-
-
 
 elif page == "Contact":
     st.markdown("""
     <style>
     .contact-section {
-        background-color: #eaf6ff;  /* Light blue background */
+        background-color: #f1f1f1;
         border-radius: 15px;
-        padding: 30px;
+        padding: 20px;
         margin-top: 20px;
-        text-align: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
     }
 
     .contact-section h2 {
-        font-family: 'Helvetica Neue', sans-serif;  /* Professional font */
+        font-family: 'Arial', sans-serif;
         font-size: 36px;
-        color: #1E90FF;  /* Light blue for title */
-        font-weight: 600;  /* Slightly bold */
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);  /* Shadow for title */
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 700;  /* Bold */
     }
 
     .contact-section p {
         font-family: 'Arial', sans-serif;
         font-size: 18px;
-        color: #333;
-        margin: 15px 0;
+        color: #555;
+        text-align: center;
     }
 
-    .contact-section ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .contact-section ul li {
+    .contact-section a {
         display: inline-block;
-        margin: 10px;
-        font-size: 20px;
-    }
-
-    .contact-section ul li a {
-        color: #1E90FF;
+        padding: 10px 20px;
+        background-color: #1E90FF;
+        color: #ffffff;
         text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s ease;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 600;
     }
 
-    .contact-section ul li a:hover {
-        color: #104E8B;  /* Darker blue on hover */
-        text-decoration: underline;  /* Underline on hover */
+    .contact-section a:hover {
+        background-color: #0d47a1;
     }
-
-    .contact-section ul li a::before {
-        content: "🔗";  /* Add icon before link */
-        margin-right: 8px;
-    }
-
     </style>
 
     <div class="contact-section">
-        <h2>Contact</h2>
-        <p>Feel free to connect with me on LinkedIn or GitHub. I’m always open to discussing new opportunities and collaborations.</p>
-        <ul>
-            <li><a href="https://www.linkedin.com/in/muhammadh-uwais-j-91630b327" target="_blank">LinkedIn</a></li>
-            <li><a href="https://github.com/uwais" target="_blank">GitHub</a></li>
-        </ul>
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch with me, please feel free to reach out via <a href="mailto:uwais@example.com">email</a> or connect with me on <a href="https://www.linkedin.com/in/uwais">LinkedIn</a>.</p>
     </div>
     """, unsafe_allow_html=True)
 
-# Footer
-st.markdown("""
-<footer>
-    © 2024 Uwais' Portfolio
-</footer>
-""", unsafe_allow_html=True)
 
 
