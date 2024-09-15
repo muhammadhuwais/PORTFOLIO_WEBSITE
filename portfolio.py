@@ -207,7 +207,6 @@ elif page == "About Me":
         <p>I am a passionate <strong>data scientist</strong> actively working on real-world projects. I graduated with a <strong>B.Com CA</strong> from <strong>Kamarajar University</strong>. I have a passion for machine learning, data analytics, and building web applications using Streamlit. I’m constantly learning and improving my skills in Python and data science. Currently, I’m focused on expanding my knowledge in areas like <strong>exploratory data analysis (EDA)</strong>, statistical testing <strong>(z-tests, t-tests)</strong>, and developing web applications using Streamlit to make data-driven solutions accessible. With expertise in handling real-world data, I strive to build innovative solutions to complex problems.</p>
     </div>
     """, unsafe_allow_html=True)
-
 elif page == "Skills":
     st.markdown("""
     <style>
@@ -235,22 +234,40 @@ elif page == "Skills":
 
     .skills-grid div {
         background-color: #ffffff;
+        border: 1px solid #e0e0e0;  /* Soft border for distinction */
         border-radius: 10px;
         padding: 20px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
+        transition: box-shadow 0.3s ease;  /* Subtle shadow transition on hover */
     }
 
-    .skills-grid div p {
-        font-size: 20px;
+    .skills-grid div:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);  /* Elegant hover shadow */
+    }
+
+    .skills-grid h3 {
+        font-size: 22px;
+        color: #007BFF;  /* Professional blue accent */
+        margin-bottom: 15px;
+        font-weight: 600;  /* Lighter bold */
+    }
+
+    .skills-grid ul {
+        list-style: none;  /* No bullets */
+        padding: 0;
+    }
+
+    .skills-grid ul li {
+        font-size: 16px;
         color: #555;
-        margin: 0;
-        font-weight: 500;
+        padding: 5px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;  /* Center emoji and text */
     }
 
-    .skills-grid div i {
-        font-size: 30px;
-        color: #1E90FF;  /* Light blue for icons */
+    .skills-grid ul li span {
+        margin-right: 10px;  /* Space between emoji and text */
     }
     </style>
 
@@ -258,32 +275,33 @@ elif page == "Skills":
         <h2>Skills</h2>
         <div class="skills-grid">
             <div>
-                <i class="fas fa-code"></i>
-                <p>Python</p>
+                <h3>Programming</h3>
+                <ul>
+                    <li><span>🐍</span> Python</li>
+                    <li><span>🗄️</span> SQL</li>
+                    <li><span>📊</span> Excel</li>
+                </ul>
             </div>
             <div>
-                <i class="fas fa-database"></i>
-                <p>Data Analysis</p>
+                <h3>Libraries</h3>
+                <ul>
+                    <li><span>📚</span> Pandas</li>
+                    <li><span>🔢</span> NumPy</li>
+                    <li><span>🔍</span> Scikit-learn</li>
+                </ul>
             </div>
             <div>
-                <i class="fas fa-chart-line"></i>
-                <p>Machine Learning</p>
-            </div>
-            <div>
-                <i class="fas fa-project-diagram"></i>
-                <p>Streamlit</p>
-            </div>
-            <div>
-                <i class="fas fa-cogs"></i>
-                <p>ETL</p>
-            </div>
-            <div>
-                <i class="fas fa-globe"></i>
-                <p>Digital Marketing</p>
+                <h3>Visualization</h3>
+                <ul>
+                    <li><span>📈</span> Matplotlib</li>
+                    <li><span>🌈</span> Seaborn</li>
+                    <li><span>📊</span> PowerBI</li>
+                </ul>
             </div>
         </div>
     </div>
     """, unsafe_allow_html=True)
+
 
 elif page == "Projects":
     st.markdown("""
@@ -378,49 +396,69 @@ elif page == "Contact":
     st.markdown("""
     <style>
     .contact-section {
-        background-color: #f1f1f1;
+        background-color: #eaf6ff;  /* Light blue background */
         border-radius: 15px;
-        padding: 20px;
+        padding: 30px;
         margin-top: 20px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
     }
 
     .contact-section h2 {
-        font-family: 'Arial', sans-serif;
+        font-family: 'Helvetica Neue', sans-serif;  /* Professional font */
         font-size: 36px;
-        color: #333;
-        text-align: center;
-        margin-bottom: 20px;
-        font-weight: 700;  /* Bold */
+        color: #1E90FF;  /* Light blue for title */
+        font-weight: 600;  /* Slightly bold */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);  /* Shadow for title */
     }
 
     .contact-section p {
         font-family: 'Arial', sans-serif;
         font-size: 18px;
-        color: #555;
-        text-align: center;
+        color: #333;
+        margin: 15px 0;
     }
 
-    .contact-section a {
+    .contact-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .contact-section ul li {
         display: inline-block;
-        padding: 10px 20px;
-        background-color: #1E90FF;
-        color: #ffffff;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 16px;
-        font-weight: 600;
+        margin: 10px;
+        font-size: 20px;
     }
 
-    .contact-section a:hover {
-        background-color: #0d47a1;
+    .contact-section ul li a {
+        color: #1E90FF;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
     }
+
+    .contact-section ul li a:hover {
+        color: #104E8B;  /* Darker blue on hover */
+        text-decoration: underline;  /* Underline on hover */
+    }
+
+    .contact-section ul li a::before {
+        content: "🔗";  /* Add icon before link */
+        margin-right: 8px;
+    }
+
     </style>
 
     <div class="contact-section">
-        <h2>Contact Me</h2>
-        <p>If you'd like to get in touch with me, please feel free to reach out via <a href="mailto:uwais@example.com">email</a> or connect with me on <a href="https://www.linkedin.com/in/uwais">LinkedIn</a>.</p>
+        <h2>Contact</h2>
+        <p>Feel free to connect with me on LinkedIn or GitHub. I’m always open to discussing new opportunities and collaborations.</p>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/uwais" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/uwais" target="_blank">GitHub</a></li>
+        </ul>
     </div>
     """, unsafe_allow_html=True)
+
 
 
 
