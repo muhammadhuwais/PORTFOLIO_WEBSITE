@@ -358,7 +358,7 @@ elif page == "Projects":
     # Project 1: YouTube Spam Detection
     st.markdown("<div class='project-section'>", unsafe_allow_html=True)
     st.markdown("<h3>YouTube Spam Detection</h3>", unsafe_allow_html=True)
-    st.image(r"C:/Users/uwais/Downloads/youtubesapm.jpg", caption="Spam Detection Chart", width=600)
+    st.image(r"https://my.clevelandclinic.org/-/scassets/images/org/health/articles/7104-diabetes-symptoms", caption="Spam Detection Chart", width=600)
     st.markdown("""
     <p>This project uses machine learning to detect spam in YouTube comments. I performed exploratory data analysis and deployed the model using Streamlit.</p>
     <a href="https://diabitiesapp-kcfogtrhm7z5mi8kp35ty2.streamlit.app/" target="_blank">View GitHub Repository</a>
