@@ -6,56 +6,76 @@ import base64
 st.set_page_config(page_title="Uwais' Portfolio", layout="wide", page_icon=":star:")
 
 
-# Inject custom CSS for sidebar styling
+import streamlit as st
+
+# Inject custom CSS for a modern sidebar design with light gray background and light blue text
 st.markdown(
     """
     <style>
-    /* Style for the entire sidebar with a gradient background */
+    /* Modern Sidebar Style */
     [data-testid="stSidebar"] {
-        background: linear-gradient(to bottom right, #74ebd5, #ACB6E5);  /* Gradient color */
-        color: white;
+        background: #f5f5f5; /* Light gray background */
+        color: #add8e6; /* Light blue text color */
         padding: 20px;
+        height: 100vh;
+        width: 250px; /* Fixed width */
+        overflow-y: auto; /* Vertical scrolling */
+        overflow-x: hidden; /* No horizontal scrolling */
+        border-right: 2px solid #e0e0e0; /* Subtle border */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+        font-family: 'Arial', sans-serif; /* Clean font */
     }
 
-    /* Customize the sidebar title */
+    /* Style for the sidebar title */
     [data-testid="stSidebar"] h2 {
-        color: #ffffff;
-        font-size: 28px;
-        font-weight: bold;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Adding shadow for better contrast */
+        color: #add8e6; /* Light blue text color */
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #e0e0e0; /* Subtle underline */
+        padding-bottom: 10px;
     }
 
     /* Style for the radio buttons */
     [data-testid="stSidebar"] .stRadio {
-        font-size: 20px;
-        color: #ffffff;
-        font-family: 'Arial', sans-serif;
+        font-size: 16px;
+        color: #add8e6; /* Light blue text color */
+        display: block;
     }
 
     /* Style for each radio button item */
     [data-testid="stSidebar"] .stRadio div {
-        padding: 10px;
-        margin-bottom: 5px;
-        border-radius: 10px;
-        transition: all 0.3s ease;  /* Smooth transition for hover effect */
+        padding: 12px;
+        margin-bottom: 8px;
+        border-radius: 6px;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+        cursor: pointer; /* Pointer cursor on hover */
     }
 
-    /* Hover effect for the radio buttons */
+    /* Hover effect for radio buttons */
     [data-testid="stSidebar"] .stRadio div:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        transform: scale(1.05);  /* Slightly enlarges the option on hover */
+        background-color: #e0e0e0; /* Slightly darker gray for hover effect */
+        color: #add8e6; /* Light blue text color on hover */
+        transform: scale(1.02); /* Slightly enlarges the item on hover */
     }
 
-    /* Style the selected radio button */
+    /* Style for the selected radio button */
     [data-testid="stSidebar"] .stRadio div[role='radio']:checked {
-        background-color: rgba(255, 255, 255, 0.4);
-        color: #000;
+        background-color: #d0d0d0; /* Slightly darker gray for selected item */
+        color: #add8e6; /* Light blue text color for selected item */
         font-weight: bold;
     }
 
-    /* Add shadow to the radio options */
-    [data-testid="stSidebar"] .stRadio div {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Custom scrollbars */
+    [data-testid="stSidebar"] ::-webkit-scrollbar {
+        width: 8px;
+    }
+    [data-testid="stSidebar"] ::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 10px;
+    }
+    [data-testid="stSidebar"] ::-webkit-scrollbar-track {
+        background: #f0f0f0;
     }
     </style>
     """,
@@ -206,100 +226,106 @@ elif page == "About Me":
         <p>I am a passionate <strong>data scientist</strong> actively working on real-world projects. I graduated with a <strong>B.Com CA</strong> from <strong>Kamarajar University</strong>. I have a passion for machine learning, data analytics, and building web applications using Streamlit. I’m constantly learning and improving my skills in Python and data science. Currently, I’m focused on expanding my knowledge in areas like <strong>exploratory data analysis (EDA)</strong>, statistical testing <strong>(z-tests, t-tests)</strong>, and developing web applications using Streamlit to make data-driven solutions accessible. With expertise in handling real-world data, I strive to build innovative solutions to complex problems.</p>
     </div>
     """, unsafe_allow_html=True)
+
 elif page == "Skills":
     st.markdown("""
     <style>
+    /* General styles for the skills section */
     .skills-section {
-        background-color: #f8f9fa;  /* Light grey background for professionalism */
-        border-radius: 15px;
-        padding: 30px;
-        margin-top: 20px;
-    }
+    background-color: #f4f4f4;  /* Light grey background for subtlety */
+    color: #333;
+    border-radius: 15px;
+    padding: 40px;
+    margin-top: 30px;  /* Reduced margin-top */
+    text-align: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+    position: relative;  /* Ensure positioning context */
+}
 
-    .skills-section h2 {
-        font-family: 'Arial', sans-serif;
-        font-size: 36px;
-        color: #333;
-        text-align: center;
-        margin-bottom: 30px;
-        font-weight: 600;  /* Lighter bold */
-    }
+.skills-section h2 {
+    font-family: 'Roboto', sans-serif;  /* Modern and clean font */
+    font-size: 36px;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
 
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);  /* 3-column layout */
-        gap: 20px;
-    }
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));  /* Responsive grid */
+    gap: 20px;
+}
 
-    .skills-grid div {
-        background-color: #ffffff;
-        border: 1px solid #e0e0e0;  /* Soft border for distinction */
-        border-radius: 10px;
-        padding: 20px;
-        text-align: center;
-        transition: box-shadow 0.3s ease;  /* Subtle shadow transition on hover */
-    }
+.skills-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
 
-    .skills-grid div:hover {
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);  /* Elegant hover shadow */
-    }
+.skills-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
 
-    .skills-grid h3 {
-        font-size: 22px;
-        color: #007BFF;  /* Professional blue accent */
-        margin-bottom: 15px;
-        font-weight: 600;  /* Lighter bold */
-    }
+.skills-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
 
-    .skills-grid ul {
-        list-style: none;  /* No bullets */
-        padding: 0;
-    }
+.skills-card h4 {
+    margin: 10px 0 0 0;
+    font-size: 1.2em;
+    color: #333;
+    font-family: 'Frank Ruhl Libre', serif;
+}
 
-    .skills-grid ul li {
-        font-size: 16px;
-        color: #555;
-        padding: 5px 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;  /* Center emoji and text */
-    }
+.skills-card p {
+    font-size: 0.9em;
+    color: #666;
+    font-family: 'Frank Ruhl Libre', serif;
+}
+</style>
 
-    .skills-grid ul li span {
-        margin-right: 10px;  /* Space between emoji and text */
-    }
-    </style>
-
-    <div class="skills-section">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div>
-                <h3>Programming</h3>
-                <ul>
-                    <li><span>🐍</span> Python</li>
-                    <li><span>🗄️</span> SQL</li>
-                    <li><span>📊</span> Excel</li>
-                </ul>
-            </div>
-            <div>
-                <h3>Libraries</h3>
-                <ul>
-                    <li><span>📚</span> Pandas</li>
-                    <li><span>🔢</span> NumPy</li>
-                    <li><span>🔍</span> Scikit-learn</li>
-                </ul>
-            </div>
-            <div>
-                <h3>Visualization</h3>
-                <ul>
-                    <li><span>📈</span> Matplotlib</li>
-                    <li><span>🌈</span> Seaborn</li>
-                    <li><span>📊</span> PowerBI</li>
-                </ul>
-            </div>
+<div class="skills-section">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+        <div class="skills-card">
+            <img src="https://img.icons8.com/ios-filled/50/000000/machine-learning.png" alt="Machine Learning"/>
+            <h4>Machine Learning</h4>
+            <p>Supervised & Unsupervised Learning, Deep Learning, NLP</p>
+        </div>
+        <div class="skills-card">
+            <img src="https://img.icons8.com/ios-filled/50/000000/graph.png" alt="Data Visualization"/>
+            <h4>Data Visualization</h4>
+            <p>Matplotlib, Seaborn, Plotly</p>
+        </div>
+        <div class="skills-card">
+            <img src="https://img.icons8.com/ios-filled/50/000000/web.png" alt="Web Development"/>
+            <h4>Web Development</h4>
+            <p>Flask, Django, Deployment Tools (Docker, Heroku)</p>
+        </div>
+        <div class="skills-card">
+            <img src="https://img.icons8.com/ios-filled/50/000000/statistics.png" alt="Statistics"/>
+            <h4>Mathematics & Statistics</h4>
+            <p>Probability, Linear Algebra, Calculus</p>
+        </div>
+        <div class="skills-card">
+            <img src="https://img.icons8.com/ios-filled/50/000000/code.png" alt="Programming Languages"/>
+            <h4>Programming Languages</h4>
+            <p>Python, JavaScript, SQL</p>
         </div>
     </div>
-    """, unsafe_allow_html=True)
+</div>
+""", unsafe_allow_html=True)
+
 
 
 elif page == "Projects":
@@ -382,27 +408,31 @@ elif page == "Contact":
     st.markdown("""
     <style>
     .contact-section {
-        background-color: #eaf6ff;  /* Light blue background */
-        border-radius: 15px;
-        padding: 30px;
-        margin-top: 20px;
+        background-color: #f9f9f9;  /* Light gray background */
+        border-radius: 10px;
+        padding: 40px;
+        margin-top: 50px;
         text-align: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .contact-section h2 {
-        font-family: 'Helvetica Neue', sans-serif;  /* Professional font */
-        font-size: 36px;
-        color: #1E90FF;  /* Light blue for title */
-        font-weight: 600;  /* Slightly bold */
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);  /* Shadow for title */
+        font-family: 'Roboto', sans-serif;  /* Professional font */
+        font-size: 34px;
+        color: #333333;  /* Dark gray for title */
+        font-weight: 700;  /* Bold for strong emphasis */
+        margin-bottom: 20px;
     }
 
     .contact-section p {
-        font-family: 'Arial', sans-serif;
+        font-family: 'Open Sans', sans-serif;
         font-size: 18px;
-        color: #333;
-        margin: 15px 0;
+        color: #555555;  /* Softer gray for text */
+        margin-bottom: 30px;
+        line-height: 1.6;
     }
 
     .contact-section ul {
@@ -412,39 +442,81 @@ elif page == "Contact":
 
     .contact-section ul li {
         display: inline-block;
-        margin: 10px;
-        font-size: 20px;
+        margin: 0 20px;
+        font-size: 22px;
     }
 
     .contact-section ul li a {
-        color: #1E90FF;
         text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s ease;
+        font-weight: 600;
+        transition: all 0.3s ease;
     }
 
-    .contact-section ul li a:hover {
-        color: #104E8B;  /* Darker blue on hover */
-        text-decoration: underline;  /* Underline on hover */
+    .contact-section ul li a img {
+        width: 40px;
+        height: 40px;
+        transition: transform 0.3s ease;
     }
 
-    .contact-section ul li a::before {
-        content: "🔗";  /* Add icon before link */
-        margin-right: 8px;
+    .contact-section ul li a:hover img {
+        transform: scale(1.2);  /* Zoom effect on hover */
     }
 
+    /* Call to action button */
+    .contact-section button {
+        background-color: #0073e6;
+        color: white;
+        padding: 12px 25px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 30px;
+    }
+
+    .contact-section button:hover {
+        background-color: #005bb5;  /* Darker on hover for effect */
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .contact-section h2 {
+            font-size: 28px;
+        }
+        .contact-section p {
+            font-size: 16px;
+        }
+        .contact-section ul li {
+            font-size: 18px;
+        }
+    }
     </style>
 
     <div class="contact-section">
-        <h2>Contact</h2>
-        <p>Feel free to connect with me on LinkedIn or GitHub. I’m always open to discussing new opportunities and collaborations.</p>
+        <h2>Contact Me</h2>
+        <p>I'm always open to connecting with new people and exploring professional opportunities. Feel free to reach out via LinkedIn, GitHub, or Email.</p>
         <ul>
-            <li><a href="https://www.linkedin.com/in/uwais" target="_blank">LinkedIn</a></li>
-            <li><a href="https://github.com/uwais" target="_blank">GitHub</a></li>
+            <li><a href="mailto:uwais@example.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Logo"></a></li>
+            <li><a href="https://www.linkedin.com/in/uwais" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo"></a></li>
+            <li><a href="https://github.com/uwais" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo"></a></li>
         </ul>
+        <button id="contact-button">Contact Me</button>
     </div>
+
+    <script>
+    document.getElementById('contact-button').addEventListener('click', function() {
+        window.location.href = 'mailto:uwais@example.com';
+    });
+
+    // Smooth scroll to contact section
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+    </script>
     """, unsafe_allow_html=True)
-
-
-
-
