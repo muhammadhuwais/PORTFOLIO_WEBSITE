@@ -410,7 +410,7 @@ elif page == "Contact":
     st.markdown("""
     <style>
     .contact-section {
-        background-color: #f9f9f9;  /* Light gray background */
+        background-color: #f5f5f5; /* Light gray background */
         border-radius: 10px;
         padding: 40px;
         margin-top: 50px;
