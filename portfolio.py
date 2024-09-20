@@ -15,7 +15,7 @@ st.markdown(
     /* Modern Sidebar Style */
     [data-testid="stSidebar"] {
         background: #f5f5f5; /* Light gray background */
-        color: #add8e6; /* Light blue text color */
+        color: #000000; /* Black text color */
         padding: 20px;
         height: 100vh;
         width: 250px; /* Fixed width */
@@ -28,7 +28,7 @@ st.markdown(
 
     /* Style for the sidebar title */
     [data-testid="stSidebar"] h2 {
-        color: #add8e6; /* Light blue text color */
+        color: #000000; /* Black text color */
         font-size: 24px;
         font-weight: 600;
         margin-bottom: 20px;
@@ -39,7 +39,7 @@ st.markdown(
     /* Style for the radio buttons */
     [data-testid="stSidebar"] .stRadio {
         font-size: 16px;
-        color: #add8e6; /* Light blue text color */
+        color: #000000; /* Black text color */
         display: block;
     }
 
@@ -55,14 +55,14 @@ st.markdown(
     /* Hover effect for radio buttons */
     [data-testid="stSidebar"] .stRadio div:hover {
         background-color: #e0e0e0; /* Slightly darker gray for hover effect */
-        color: #add8e6; /* Light blue text color on hover */
+        color: #3498db; /* Light blue text color on hover */
         transform: scale(1.02); /* Slightly enlarges the item on hover */
     }
 
     /* Style for the selected radio button */
     [data-testid="stSidebar"] .stRadio div[role='radio']:checked {
         background-color: #d0d0d0; /* Slightly darker gray for selected item */
-        color: #add8e6; /* Light blue text color for selected item */
+        color: #3498db; /* Light blue text color for selected item */
         font-weight: bold;
     }
 
@@ -86,7 +86,6 @@ st.markdown(
 page = st.sidebar.radio("Go to", ["Home", "About Me", "Skills", "Projects", "Contact"])
 
 
-
 # Function to get base64 image
 def get_base64_image(image_path):
     try:
@@ -107,7 +106,7 @@ if page == "Home":
     col1, col2 = st.columns([1, 2])
 
     with col1:
-         st.markdown(f"""
+       st.markdown(f"""
     <style>
     .profile-pic {{
         width: 250px;
@@ -115,7 +114,7 @@ if page == "Home":
         border-radius: 50%;
         object-fit: cover;
         box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
-        border: 5px solid #3498db;
+        border: 5px solid #3498db;  /* Changed border to blue */
     }}
     .center {{
         display: flex;
@@ -130,14 +129,15 @@ if page == "Home":
     """, unsafe_allow_html=True)
 
 
+
     with col2:
-        st.markdown("""
+       st.markdown("""
     <style>
         .welcome-section {
-            background-color: #fdfdfd;
+            background-color: #f4f4f4;  /* Light grey background for consistency */
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
             text-align: left;
         }
 
@@ -157,7 +157,7 @@ if page == "Home":
 
         .highlight {
             font-weight: bold;
-            color: #e67e22;
+            color: #3498db;
         }
 
         .goal {
@@ -187,11 +187,12 @@ if page == "Home":
     </div>
     """, unsafe_allow_html=True)
 
+
 elif page == "About Me":
     st.markdown("""
     <style>
     .about-section {
-        background-color: #eaf6ff;  /* Light blue background */
+        background-color: #f4f4f4;  /* Light grey background */
         border-radius: 15px;
         padding: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
@@ -200,7 +201,7 @@ elif page == "About Me":
     .about-section h2 {
         font-family: 'Helvetica Neue', sans-serif;  /* Modern and professional font */
         font-size: 36px;
-        color: #1E90FF;  /* Light blue for title */
+        color: #2c3e50;  /* black colour for title */
         text-align: center;
         font-weight: 700;  /* Bold and professional */
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);  /* Shadow for title */
@@ -226,6 +227,7 @@ elif page == "About Me":
         <p>I am a passionate <strong>data scientist</strong> actively working on real-world projects. I graduated with a <strong>B.Com CA</strong> from <strong>Kamarajar University</strong>. I have a passion for machine learning, data analytics, and building web applications using Streamlit. I’m constantly learning and improving my skills in Python and data science. Currently, I’m focused on expanding my knowledge in areas like <strong>exploratory data analysis (EDA)</strong>, statistical testing <strong>(z-tests, t-tests)</strong>, and developing web applications using Streamlit to make data-driven solutions accessible. With expertise in handling real-world data, I strive to build innovative solutions to complex problems.</p>
     </div>
     """, unsafe_allow_html=True)
+
 
 
 elif page == "Skills":
@@ -284,7 +286,7 @@ elif page == "Skills":
     .skills-card h4 {
         margin: 10px 0 0 0;
         font-size: 1.2em;
-        color: #333;
+        color:  #3498db;
         font-family: 'Frank Ruhl Libre', serif;
     }
 
