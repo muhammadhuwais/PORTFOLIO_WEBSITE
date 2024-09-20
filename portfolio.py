@@ -227,105 +227,105 @@ elif page == "About Me":
     </div>
     """, unsafe_allow_html=True)
 
+
 elif page == "Skills":
     st.markdown("""
     <style>
     /* General styles for the skills section */
     .skills-section {
-    background-color: #f4f4f4;  /* Light grey background for subtlety */
-    color: #333;
-    border-radius: 15px;
-    padding: 40px;
-    margin-top: 30px;  /* Reduced margin-top */
-    text-align: center;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
-    position: relative;  /* Ensure positioning context */
-}
+        background-color: #f4f4f4;  /* Light grey background for subtlety */
+        color: #333;
+        border-radius: 15px;
+        padding: 40px;
+        margin-top: 0px;  /* Remove extra margin on top */
+        text-align: center;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+        position: relative;  /* Ensure positioning context */
+    }
 
-.skills-section h2 {
-    font-family: 'Roboto', sans-serif;  /* Modern and clean font */
-    font-size: 36px;
-    color: #333;
-    font-weight: 700;
-    margin-bottom: 30px;
-}
+    .skills-section h2 {
+        font-family: 'Roboto', sans-serif;  /* Modern and clean font */
+        font-size: 36px;
+        color: #333;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));  /* Responsive grid */
-    gap: 20px;
-}
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));  /* Responsive grid */
+        gap: 20px;
+    }
 
-.skills-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
+    .skills-card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
 
-.skills-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-}
+    .skills-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
 
-.skills-card img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 10px;
-}
+    .skills-card img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
 
-.skills-card h4 {
-    margin: 10px 0 0 0;
-    font-size: 1.2em;
-    color: #333;
-    font-family: 'Frank Ruhl Libre', serif;
-}
+    .skills-card h4 {
+        margin: 10px 0 0 0;
+        font-size: 1.2em;
+        color: #333;
+        font-family: 'Frank Ruhl Libre', serif;
+    }
 
-.skills-card p {
-    font-size: 0.9em;
-    color: #666;
-    font-family: 'Frank Ruhl Libre', serif;
-}
-</style>
+    .skills-card p {
+        font-size: 0.9em;
+        color: #666;
+        font-family: 'Frank Ruhl Libre', serif;
+    }
+    </style>
 
-<div class="skills-section">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-        <div class="skills-card">
-            <img src="https://img.icons8.com/ios-filled/50/000000/machine-learning.png" alt="Machine Learning"/>
-            <h4>Machine Learning</h4>
-            <p>Supervised & Unsupervised Learning, Deep Learning, NLP</p>
-        </div>
-        <div class="skills-card">
-            <img src="https://img.icons8.com/ios-filled/50/000000/graph.png" alt="Data Visualization"/>
-            <h4>Data Visualization</h4>
-            <p>Matplotlib, Seaborn, Plotly</p>
-        </div>
-        <div class="skills-card">
-            <img src="https://img.icons8.com/ios-filled/50/000000/web.png" alt="Web Development"/>
-            <h4>Web Development</h4>
-            <p>Flask, Django, Deployment Tools (Docker, Heroku)</p>
-        </div>
-        <div class="skills-card">
-            <img src="https://img.icons8.com/ios-filled/50/000000/statistics.png" alt="Statistics"/>
-            <h4>Mathematics & Statistics</h4>
-            <p>Probability, Linear Algebra, Calculus</p>
-        </div>
-        <div class="skills-card">
-            <img src="https://img.icons8.com/ios-filled/50/000000/code.png" alt="Programming Languages"/>
-            <h4>Programming Languages</h4>
-            <p>Python, JavaScript, SQL</p>
+    <div class="skills-section">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skills-card">
+                <img src="https://img.icons8.com/ios-filled/50/000000/machine-learning.png" alt="Machine Learning"/>
+                <h4>Machine Learning</h4>
+                <p>Supervised & Unsupervised Learning, Deep Learning, NLP</p>
+            </div>
+            <div class="skills-card">
+                <img src="https://img.icons8.com/ios-filled/50/000000/graph.png" alt="Data Visualization"/>
+                <h4>Data Visualization</h4>
+                <p>Matplotlib, Seaborn, Plotly</p>
+            </div>
+            <div class="skills-card">
+                <img src="https://img.icons8.com/ios-filled/50/000000/web.png" alt="Web Development"/>
+                <h4>Web Development</h4>
+                <p>Flask, Django, Deployment Tools (Docker, Heroku)</p>
+            </div>
+            <div class="skills-card">
+                <img src="https://img.icons8.com/ios-filled/50/000000/statistics.png" alt="Statistics"/>
+                <h4>Mathematics & Statistics</h4>
+                <p>Probability, Linear Algebra, Calculus</p>
+            </div>
+            <div class="skills-card">
+                <img src="https://img.icons8.com/ios-filled/50/000000/code.png" alt="Programming Languages"/>
+                <h4>Programming Languages</h4>
+                <p>Python, JavaScript, SQL</p>
+            </div>
         </div>
     </div>
-</div>
-""", unsafe_allow_html=True)
-
+    """, unsafe_allow_html=True)
 
 
 elif page == "Projects":
