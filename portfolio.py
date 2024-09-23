@@ -329,79 +329,108 @@ elif page == "Skills":
     </div>
     """, unsafe_allow_html=True)
 
-
 elif page == "Projects":
     st.markdown("""
     <style>
     .project-section {
-        background: linear-gradient(135deg, #e0f7fa, #e0f4f4);  /* Light gradient background */
-        border-radius: 12px;
-        padding: 25px;
-        margin-bottom: 30px;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);  /* Deeper shadow for cards */
-        transition: transform 0.2s;  /* Hover effect */
+        background: linear-gradient(135deg, #f0f8ff, #e8f5f9);  /* Light gradient */
+        border-radius: 15px;  /* Rounded edges */
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth hover */
     }
 
     .project-section:hover {
-        transform: translateY(-10px);  /* Lift effect on hover */
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        transform: scale(1.02);  /* Slight scaling */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);  /* Enhanced shadow */
     }
 
     .project-section h3 {
         font-family: 'Arial', sans-serif;
-        font-size: 30px;
-        color: #1E90FF;  /* Light blue for headings */
-        margin-bottom: 15px;
+        font-size: 22px;  /* Slightly smaller font size */
+        color: #1E90FF;
+        margin-bottom: 10px;
         font-weight: 700;
         text-align: center;
+        position: relative;
+        padding-bottom: 5px;
+    }
+
+    .project-section h3::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 3px;
+        background-color: #1E90FF;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -5px;
+        border-radius: 2px;
     }
 
     .project-section p {
         font-family: 'Arial', sans-serif;
-        font-size: 16px;
-        color: #444;
-        line-height: 1.8;
-        margin-bottom: 15px;
+        font-size: 30px;  /* Reduced font size */
+        color: #333;
+        line-height: 1.4;
+        margin-bottom: 10px;
         text-align: justify;
     }
 
     .project-section a {
         display: inline-block;
-        padding: 10px 20px;
+        padding: 8px 15px;
         background-color: #1E90FF;
         color: white;
-        border-radius: 5px;
+        border-radius: 4px;
         text-decoration: none;
         font-weight: bold;
         text-align: center;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     }
 
     .project-section a:hover {
-        background-color: #104E8B;  /* Darker blue on hover */
+        background-color: #104E8B;
+        transform: translateY(-2px);
     }
 
+    .project-section img {
+        border-radius: 8px;  /* Rounded corners */
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+        width: 150px;  /* Set to a smaller fixed width */
+        height: 100px; /* Set to a smaller fixed height */
+        object-fit: cover;  /* Crop images to fit the container */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
     </style>
     """, unsafe_allow_html=True)
 
     # Project 1: YouTube Spam Detection
     st.markdown("<div class='project-section'>", unsafe_allow_html=True)
     st.markdown("<h3>YouTube Spam Detection</h3>", unsafe_allow_html=True)
-    st.image(r"https://my.clevelandclinic.org/-/scassets/images/org/health/articles/7104-diabetes-symptoms", caption="Spam Detection Chart", width=600)
+    st.image("", caption="Spam Detection Chart", use_column_width=False)
     st.markdown("""
-    <p>This project uses machine learning to detect spam in YouTube comments. I performed exploratory data analysis and deployed the model using Streamlit.</p>
-    <a href="https://diabitiesapp-kcfogtrhm7z5mi8kp35ty2.streamlit.app/" target="_blank">View GitHub Repository</a>
+    <p>This project demonstrates my ability to work with machine learning techniques to detect spam in YouTube comments. I utilized exploratory data analysis (EDA) to understand the data better and deployed a predictive model using Streamlit.</p>
+    <a href="https://diabitiesapp-kcfogtrhm7z5mi8kp35ty2.streamlit.app/" target="_blank">View Project</a>
     """, unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
 
     # Project 2: Diabetes Prediction App
     st.markdown("<div class='project-section'>", unsafe_allow_html=True)
     st.markdown("<h3>Diabetes Prediction App</h3>", unsafe_allow_html=True)
-    st.image(r"https://julianhealthcare.com/wp-content/uploads/2019/07/Diabetes.jpg", caption="Diabetes Prediction App", width=600)
+    st.image("", caption="Diabetes Prediction App", use_column_width=False)
     st.markdown("""
-    <p>This is a web application that predicts diabetes based on input data. It was built with Streamlit and Scikit-learn.</p>
+    <p>This web application predicts the likelihood of diabetes based on user input data. Built using Streamlit and Scikit-learn, it demonstrates my expertise in developing data-driven applications.</p>
     <a href="https://github.com/uwais/Diabetes-Prediction-App" target="_blank">View GitHub Repository</a>
     """, unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
+
+
 
     # Add more projects following the same structure as above
 
