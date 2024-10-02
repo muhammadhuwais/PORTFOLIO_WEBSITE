@@ -106,9 +106,26 @@ if page == "Home":
     # Home section with custom styling
     col1, col2 = st.columns([1, 2])
 
+    
     with col1:
-        st.markdown(f"""
-        <style>
+       st.markdown(f"""
+    <style>
+        .profile-container {{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background: linear-gradient(to bottom right, rgba(52, 152, 219, 0.2), rgba(255, 255, 255, 0.9));  /* Subtle gradient */
+            padding: 30px;  /* Increased padding */
+            border-radius: 20px;  /* More rounded corners for a softer look */
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);  /* Deeper shadow for depth */
+            transition: background 0.3s ease;  /* Transition effect for background */
+        }}
+
+        .profile-container:hover {{
+            background: linear-gradient(to bottom right, rgba(52, 152, 219, 0.3), rgba(255, 255, 255, 1));  /* Darker gradient on hover */
+        }}
+
         .profile-pic {{
             width: 250px;
             height: 250px;
@@ -116,106 +133,113 @@ if page == "Home":
             object-fit: cover;
             box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
             border: 5px solid #3498db;  
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }}
+
         .profile-pic:hover {{
-            transform: scale(1.05);  /* Slight zoom on hover */
+            transform: scale(1.1);  /* Slightly increased zoom on hover */
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);  /* Enhanced shadow on hover */
         }}
-        .center {{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }}
-        </style>
-        <div class="center">
-            <img src="data:image/png;base64,{image_base64}" class="profile-pic"/>
-        </div>
-        """, unsafe_allow_html=True)
+    </style>
+    <div class="profile-container">
+        <img src="data:image/png;base64,{image_base64}" class="profile-pic"/>
+    </div>
+    """, unsafe_allow_html=True)
 
     with col2:
-        st.markdown("""
-        <style>
-            .welcome-section {
-                background-color: #f5f5f5;  /* Light gray background */
-                padding: 30px;
-                border-radius: 15px;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-                text-align: left;
-                animation: fadeIn 1s ease-in-out;
-            }
+       st.markdown("""
+    <style>
+        .welcome-section {
+            background-color: #ffffff;  /* White background for a clean look */
+            padding: 40px;  /* Increased padding for more space */
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            animation: fadeIn 1s ease-in-out;
+            transition: transform 0.2s;  /* Smooth transition for hover effect */
+        }
 
-            .welcome-section h1 {
-                font-family: 'Roboto', sans-serif;
-                font-size: 36px;  /* Adjusted font size */
-                color: #2c3e50;
-                margin-bottom: 15px;
-                text-transform: uppercase;  /* Capitalize for emphasis */
-            }
+        .welcome-section:hover {
+            transform: scale(1.02);  /* Slightly enlarge on hover */
+        }
 
-            .welcome-section p {
-                font-family: 'Open Sans', sans-serif;
-                font-size: 18px;
-                color: #34495e;
-                line-height: 1.6;
-                margin-bottom: 15px;  /* Added margin for spacing */
-            }
+        .welcome-section h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 35px;  /* Increased font size for prominence */
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-transform: uppercase;  /* Capitalize for emphasis */
+            letter-spacing: 1px;  /* Spacing for a modern look */
+        }
 
-            .highlight {
-                font-weight: bold;
-                color: #3498db;  /* Highlight color */
-            }
+        .welcome-section p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18px;
+            color: #34495e;
+            line-height: 1.8;  /* Increased line height for better readability */
+            margin-bottom: 15px;
+        }
 
-            .goal {
-                margin-top: 10px;
-                font-family: 'Open Sans', sans-serif;
-                font-size: 20px;
-                color: #2980b9;
-                text-align: left;
-                font-style: italic;
-            }
+        .highlight {
+            font-weight: bold;
+            color: #3498db;  /* Highlight color */
+            text-decoration: underline;  /* Underline for emphasis */
+        }
 
-            .tagline {
-                font-family: 'Open Sans', sans-serif;
-                font-size: 16px;
-                color: #16a085;
-                margin-top: 5px;
-                font-weight: bold;
-                text-align: center;
-            }
+        .goal {
+            margin-top: 10px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            color: #2980b9;
+            text-align: left;
+            font-style: italic;
+            margin-bottom: 15px;  /* Added margin for spacing */
+        }
 
-            .cta-button {
-                display: inline-block;
-                margin-top: 20px;
-                padding: 10px 20px;
-                background-color: #3498db;
-                color: white;
-                text-decoration: none;
-                border-radius: 5px;
-                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-                transition: background-color 0.3s, box-shadow 0.3s;
-            }
+        .tagline {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18px;  /* Slightly increased font size */
+            color: #16a085;
+            margin-top: 5px;
+            font-weight: bold;
+            text-align: center;
+            font-style: italic;  /* Italics for a sophisticated touch */
+        }
 
-            .cta-button:hover {
-                background-color: #2980b9;
-                box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
-            }
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;  /* Increased padding for a more substantial button */
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, box-shadow 0.3s;
+            font-weight: bold;  /* Bold text for emphasis */
+        }
 
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-        </style>
+        .cta-button:hover {
+            background-color: #2980b9;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+        }
 
-        <div class="welcome-section">
-            <h1>Welcome to Uwais' Portfolio</h1>
-            <p>Hello! I'm <span class="highlight">Muhammadh Uwais</span>, a passionate data scientist and Python developer specializing in <span class="highlight">machine learning</span> and <span class="highlight">data analytics</span>. This portfolio showcases my journey and commitment to solving real-world problems through data.</p>
-            <p>I focus on <span class="highlight">predictive models</span>, conducting <span class="highlight">exploratory data analysis (EDA)</span>, and deploying <span class="highlight">data-driven applications</span> that make a positive impact.</p>
-            <p class="goal">My goal is to continuously evolve in the data science field and contribute to innovative solutions.</p>
-            <p class="tagline">"Empowering decisions through data, one model at a time."</p>
-            <a href="#projects" class="cta-button">View My Projects</a>
-        </div>
-        """, unsafe_allow_html=True)
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+
+    <div class="welcome-section">
+        <h1>Welcome to Uwais' Portfolio</h1>
+        <p>Hello! I'm <span class="highlight">Muhammadh Uwais</span>, a passionate data scientist and Python developer specializing in <span class="highlight">machine learning</span> and <span class="highlight">data analytics</span>. This portfolio showcases my journey and commitment to solving real-world problems through data.</p>
+        <p>I focus on <span class="highlight">predictive models</span> and conducting <span class="highlight">exploratory data analysis (EDA)</span> to derive actionable insights.</p>
+        <p class="goal">My goal is to continuously evolve in the data science field and contribute to innovative solutions.</p>
+        <p class="tagline">"Empowering decisions through data, one model at a time."</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+
 
 
 elif page == "About Me":
