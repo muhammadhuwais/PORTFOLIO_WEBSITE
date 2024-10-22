@@ -84,7 +84,7 @@ st.markdown(
 )
 
 # Sidebar with radio button navigation
-page = st.sidebar.radio("Go to", ["Home", "About Me", "Skills", "Projects", "Contact"])
+page = st.sidebar.radio("Go to", ["Home", "About Me", "Skills", "Projects", "Contact","resume"])
 
 
 
@@ -98,7 +98,7 @@ def get_base64_image(image_path):
 
 
 # Profile Image
-image_base64 = get_base64_image(r"C:\Users\uwais\Documents\WhatsApp Image 2024-09-26 at 11.31.50_50901358.jpg")        
+image_base64 = get_base64_image(r"C:\Users\uwais\Documents\WhatsApp Image 2024-10-22 at 10.19.18_ebab9086.jpg")        
 
 
 
@@ -422,12 +422,12 @@ elif page == "Skills":
             <div class="skills-card">
                 <img src="https://img.icons8.com/ios-filled/50/000000/graph.png" alt="Data Visualization"/>
                 <h4>Data Visualization</h4>
-                <p>Matplotlib, Seaborn, Plotly</p>
+                <p>Matplotlib, Seaborn, Powerbi</p>
             </div>
             <div class="skills-card">
                 <img src="https://img.icons8.com/ios-filled/50/000000/web.png" alt="Web Development"/>
                 <h4>Web Development</h4>
-                <p>Flask, Django, Deployment Tools (Docker, Heroku)</p>
+                <p>Flask, Streamlit, Deployment Tools (Docker)</p>
             </div>
             <div class="skills-card">
                 <img src="https://img.icons8.com/ios-filled/50/000000/statistics.png" alt="Statistics"/>
@@ -437,7 +437,7 @@ elif page == "Skills":
             <div class="skills-card">
                 <img src="https://img.icons8.com/ios-filled/50/000000/code.png" alt="Programming Languages"/>
                 <h4>Programming Languages</h4>
-                <p>Python, JavaScript, SQL</p>
+                <p>Python, Html, My SQL</p>
             </div>
         </div>
     </div>
@@ -454,83 +454,86 @@ elif page == "Projects":
         flex-wrap: wrap;
         gap: 20px; /* Space between project cards */
         justify-content: center; /* Center align the project cards */
+        padding: 30px; /* Add padding around the container */
+        background: #f9f9f9; /* Light background for contrast */
+        border-radius: 10px; /* Rounded edges */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
     }
 
     .project-section {
-        background: linear-gradient(135deg, #f0f8ff, #e8f5f9);  /* Light gradient */
-        border-radius: 15px;  /* Rounded edges */
+        background: white;  /* White background for project cards */
+        border-radius: 10px;  /* Rounded edges */
         padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);  /* Soft shadow */
         transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth hover */
         width: 300px; /* Fixed width for uniformity */
         text-align: center; /* Center text alignment */
     }
 
     .project-section:hover {
-        transform: scale(1.02);  /* Slight scaling */
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);  /* Enhanced shadow */
+        transform: translateY(-5px);  /* Lift effect on hover */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  /* Enhanced shadow */
     }
 
     .project-section h3 {
         font-family: 'Arial', sans-serif;
-        font-size: 24px;  /* Updated font size for titles */
-        color: #1E90FF; /* Title color */
+        font-size: 20px;  /* Updated font size for titles */
+        color: #333; /* Title color */
         margin-bottom: 10px;
         font-weight: 700;
-        position: relative;
-        padding-bottom: 5px;
-    }
-
-    .project-section h3::after {
-        content: '';
-        position: absolute;
-        width: 50px; /* Wider underline */
-        height: 3px;
-        background-color: #1E90FF;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -5px;
-        border-radius: 2px;
     }
 
     .project-section p {
         font-family: 'Arial', sans-serif;
-        font-size: 16px;  /* Adjusted font size for better readability */
-        color: #333;
-        line-height: 1.6;
+        font-size: 14px;  /* Adjusted font size for better readability */
+        color: #666; /* Slightly lighter text for contrast */
+        line-height: 1.5;
         margin-bottom: 10px;
         text-align: justify; /* Justify text for a cleaner look */
     }
 
     .project-section a {
         display: inline-block;
-        padding: 10px 20px;
-        background-color: #1E90FF; /* Button background color */
+        padding: 10px 15px;
+        background-color: #007BFF; /* Button background color */
         color: white; /* Button text color */
         border-radius: 4px; /* Rounded button */
         text-decoration: none; /* No underline */
         font-weight: bold; /* Bold text */
         text-align: center; /* Center text */
         transition: background-color 0.3s ease, transform 0.3s ease;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Button shadow */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Button shadow */
+        margin-top: 10px; /* Margin for button spacing */
     }
 
     .project-section a:hover {
-        background-color: #104E8B; /* Darker button color on hover */
+        background-color: #0056b3; /* Darker button color on hover */
         transform: translateY(-2px); /* Lift effect on hover */
     }
 
     .project-section img {
         border-radius: 8px;  /* Rounded corners */
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Image shadow */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Image shadow */
         margin-bottom: 10px;
         width: 100%; /* Responsive image width */
         height: auto; /* Maintain aspect ratio */
         object-fit: cover;  /* Crop images to fit the container */
     }
+
+    /* Heading Style */
+    .section-heading {
+        font-family: 'Arial', sans-serif;
+        font-size: 28px;  /* Font size for heading */
+        color: #007BFF; /* Heading color */
+        text-align: center; /* Center the heading */
+        margin: 20px 0; /* Space above and below */
+        font-weight: bold; /* Bold heading */
+    }
     </style>
     """, unsafe_allow_html=True)
+
+    # Heading for the Projects Section
+    st.markdown("<h2 class='section-heading'>PROJECTS</h2>", unsafe_allow_html=True)
 
     # Container for projects
     st.markdown("<div class='projects-container'>", unsafe_allow_html=True)
@@ -552,6 +555,9 @@ elif page == "Projects":
     st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown("</div>", unsafe_allow_html=True)  # Closing the projects container
+
+
+
 
 
 
@@ -627,9 +633,38 @@ elif page == "Contact":
         <h2>Contact Me</h2>
         <p>I'm always open to connecting with new people and exploring professional opportunities. Feel free to reach out via LinkedIn, GitHub, or Email.</p>
         <ul>
-            <li><a href="mailto:uwais@example.com" aria-label="Email"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Logo"></a></li>
-            <li><a href="https://www.linkedin.com/in/uwais" target="_blank" aria-label="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo"></a></li>
-            <li><a href="https://github.com/uwais" target="_blank" aria-label="GitHub"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo"></a></li>
+            <li><a href="mailto:uwaisu867@gmail.com" aria-label="Email"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Logo"></a></li>
+            <li><a href="https://www.linkedin.com/in/muhammadh-uwais-j-91630b327/" target="_blank" aria-label="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo"></a></li>
+            <li><a href="https://github.com/muhammadhuwais" target="_blank" aria-label="GitHub"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo"></a></li>
         </ul>
     </div>
     """, unsafe_allow_html=True)
+
+
+
+import streamlit as st
+
+# Resume Section in one single block
+if page == "resume":
+    with open(r"C:/Users/uwais/Documents/myself-1.pdf", "rb") as pdf_file:
+        PDFbyte = pdf_file.read()
+
+    # Displaying PDF in the viewer
+    st.header("MY RESUME")
+    st.write("Explore my resume below for detailed insights into my background, skills, and accomplishments.")
+    
+    # Embed PDF Viewer
+    st.markdown(
+        f'<iframe src="data:application/pdf;base64,{base64.b64encode(PDFbyte).decode()}" width="100%" height="850" style="border: none;"></iframe>',
+        unsafe_allow_html=True
+    )
+
+    # Download Resume Button
+    st.download_button(
+        label="Download Resume",
+        data=PDFbyte,
+        file_name="my_resume.pdf",
+        mime="application/pdf"
+    )
+
+
