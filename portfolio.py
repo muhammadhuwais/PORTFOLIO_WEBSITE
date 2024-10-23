@@ -98,7 +98,7 @@ def get_base64_image(image_path):
 
 
 # Profile Image
-image_base64 = get_base64_image(r"C:\Users\uwais\Documents\WhatsApp Image 2024-10-22 at 10.19.18_ebab9086.jpg")        
+image_base64 = get_base64_image(r"uwais.jpg")        
 
 
 
