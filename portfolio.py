@@ -646,7 +646,7 @@ import streamlit as st
 
 # Resume Section in one single block
 if page == "resume":
-    with open(r"C:/Users/uwais/Documents/myself-1.pdf", "rb") as pdf_file:
+    with open("myself-1.pdf", "rb") as pdf_file:
         PDFbyte = pdf_file.read()
 
     # Displaying PDF in the viewer
