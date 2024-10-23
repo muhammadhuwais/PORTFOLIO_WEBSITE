@@ -98,7 +98,7 @@ def get_base64_image(image_path):
 
 
 # Profile Image
-image_base64 = get_base64_image(r"uwais.jpg")        
+image_base64 = get_base64_image("uwais.jpg")        
 
 
 
