@@ -98,7 +98,7 @@ def get_base64_image(image_path):
 
 
 # Profile Image
-image_base64 = get_base64_image("uwais.jpg")        
+image_base64 = get_base64_image(r"images\uwais.jpg")        
 
 
 
@@ -334,12 +334,13 @@ elif page == "Skills":
     }
 
     .skills-section h2 {
-        font-family: 'Montserrat', sans-serif;  /* Clean, modern font */
-        font-size: 32px;  /* Reduced font size */
-        color: #2c3e50;  /* Slightly darker heading color */
+        font-family: 'Montserrat', sans-serif;  /* Modern and professional font */
+        font-size: 36px;  /* Slightly reduced font size */
+        color: #2c3e50;  /* Dark color for the title */
         font-weight: 700;
-        margin-bottom: 20px;  /* Reduced margin */
-        text-transform: uppercase;  /* Capitalize for emphasis */
+        margin-bottom: 15px;  /* Reduced margin */
+        text-transform: uppercase;  /* Capitalize the title */
+        letter-spacing: 1px;  /* Reduced letter-spacing */
     }
 
     .skills-grid {
@@ -445,92 +446,100 @@ elif page == "Skills":
 
 
 
+
 elif page == "Projects":
-    st.markdown("""
-    <style>
+    st.markdown("""<style>
     /* Overall Project Section Style */
     .projects-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px; /* Space between project cards */
-        justify-content: center; /* Center align the project cards */
-        padding: 30px; /* Add padding around the container */
-        background: #f9f9f9; /* Light background for contrast */
-        border-radius: 10px; /* Rounded edges */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        padding: 40px;
+        background: linear-gradient(135deg, #f0f4f8, #e0e5ec);
+        border-radius: 15px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     }
 
-    .project-section {
-        background: white;  /* White background for project cards */
-        border-radius: 10px;  /* Rounded edges */
-        padding: 20px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);  /* Soft shadow */
-        transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth hover */
-        width: 300px; /* Fixed width for uniformity */
-        text-align: center; /* Center text alignment */
+    /* Project card */
+    .project-card {
+        display: flex; /* Flexbox for layout */
+        flex-direction: column; /* Align items in a column */
+        background: white; /* White background for each card */
+        border-radius: 10px;
+        overflow: hidden; /* Clip child elements */
+        transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px; /* Space between project cards */
     }
 
-    .project-section:hover {
-        transform: translateY(-5px);  /* Lift effect on hover */
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  /* Enhanced shadow */
+    /* Project card hover effect */
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     }
 
-    .project-section h3 {
+    /* Project content area */
+    .project-content {
+        flex: 1; /* Allow content to take remaining space */
+        padding: 15px; /* Padding around the text */
+    }
+
+    /* Project title */
+    .project-card h3 {
         font-family: 'Arial', sans-serif;
-        font-size: 20px;  /* Updated font size for titles */
-        color: #333; /* Title color */
-        margin-bottom: 10px;
+        font-size: 22px;
+        color: #333;
+        margin: 0 0 10px; /* Margin adjustments */
         font-weight: 700;
     }
 
-    .project-section p {
+    /* Project description */
+    .project-card p {
         font-family: 'Arial', sans-serif;
-        font-size: 14px;  /* Adjusted font size for better readability */
-        color: #666; /* Slightly lighter text for contrast */
+        font-size: 15px;
+        color: #555;
+        margin: 0 0 10px; /* Margin adjustments */
         line-height: 1.5;
-        margin-bottom: 10px;
-        text-align: justify; /* Justify text for a cleaner look */
     }
 
-    .project-section a {
+    /* Separate explanation paragraph */
+    .project-card .explanation {
+        font-family: 'Arial', sans-serif;
+        font-size: 14px;
+        color: #444; /* Slightly darker color for explanation */
+        margin: 0 0 10px; /* Margin adjustments */
+        line-height: 1.4;
+        border-top: 1px solid #ddd; /* Divider line */
+        padding-top: 10px; /* Padding above explanation */
+    }
+
+    /* Links (GitHub, Streamlit) */
+    .project-card a {
         display: inline-block;
-        padding: 10px 15px;
-        background-color: #007BFF; /* Button background color */
-        color: white; /* Button text color */
-        border-radius: 4px; /* Rounded button */
-        text-decoration: none; /* No underline */
-        font-weight: bold; /* Bold text */
-        text-align: center; /* Center text */
-        transition: background-color 0.3s ease, transform 0.3s ease;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Button shadow */
-        margin-top: 10px; /* Margin for button spacing */
+        padding: 12px 20px;
+        background-color: #007BFF; /* Button color */
+        color: white;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        text-align: center;
+        transition: background-color 0.3s;
+        margin-top: 10px; /* Margin for spacing */
     }
 
-    .project-section a:hover {
-        background-color: #0056b3; /* Darker button color on hover */
-        transform: translateY(-2px); /* Lift effect on hover */
-    }
-
-    .project-section img {
-        border-radius: 8px;  /* Rounded corners */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Image shadow */
-        margin-bottom: 10px;
-        width: 100%; /* Responsive image width */
-        height: auto; /* Maintain aspect ratio */
-        object-fit: cover;  /* Crop images to fit the container */
+    /* Hover effect for links */
+    .project-card a:hover {
+        background-color: #0056b3; /* Darker button on hover */
     }
 
     /* Heading Style */
     .section-heading {
-        font-family: 'Arial', sans-serif;
-        font-size: 28px;  /* Font size for heading */
-        color: #007BFF; /* Heading color */
-        text-align: center; /* Center the heading */
-        margin: 20px 0; /* Space above and below */
-        font-weight: bold; /* Bold heading */
+        font-family: 'Montserrat', sans-serif;  /* Modern and professional font */
+        font-size: 36px;  /* Slightly reduced font size */
+        color: #2c3e50;  /* Dark color for the title */
+        font-weight: 700;
+        margin-bottom: 15px;  /* Reduced margin */
+        text-transform: uppercase;  /* Capitalize the title */
+        letter-spacing: 1px;  /* Reduced letter-spacing */
     }
-    </style>
-    """, unsafe_allow_html=True)
+    </style>""", unsafe_allow_html=True)
 
     # Heading for the Projects Section
     st.markdown("<h2 class='section-heading'>PROJECTS</h2>", unsafe_allow_html=True)
@@ -539,30 +548,94 @@ elif page == "Projects":
     st.markdown("<div class='projects-container'>", unsafe_allow_html=True)
 
     # Project 1: YouTube Spam Detection
-    st.markdown("<div class='project-section'>", unsafe_allow_html=True)
+    st.markdown("<div class='project-card'>", unsafe_allow_html=True)
+    st.markdown("<div class='project-content'>", unsafe_allow_html=True)
     st.markdown("<h3>YouTube Spam Detection</h3>", unsafe_allow_html=True)
-    st.image("your_image_link_1.jpg", caption="Spam Detection Chart", use_column_width=True)  # Add your image link here
-    st.markdown("""<p>This project demonstrates my ability to work with machine learning techniques to detect spam in YouTube comments. I utilized exploratory data analysis (EDA) to understand the data better and deployed a predictive model using Streamlit.</p>
-    <a href="https://diabitiesapp-kcfogtrhm7z5mi8kp35ty2.streamlit.app/" target="_blank">View Project</a>""", unsafe_allow_html=True)
+    st.markdown("<p class='explanation'>This project demonstrates my ability to work with machine learning techniques to detect spam in YouTube comments.</p>", unsafe_allow_html=True)
+    st.markdown("<p>I utilized exploratory data analysis (EDA) to understand the data better and deployed a predictive model using Streamlit.</p>", unsafe_allow_html=True)
+    st.markdown("""<a href="https://github.com/uwais/YouTube-Spam-Detection" target="_blank">GitHub Repository</a>
+    <a href="https://your_streamlit_app_link" target="_blank">Streamlit App</a>""", unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    # Multiple images for Project 1 in columns
+    col1, col2, col3 = st.columns(3)  # Adjust the number of columns based on the number of images
+    with col1:
+        st.image("images/motivational-theme-vp11.jpg", width=300)
+    with col2:
+        st.image("images/Diabetes.jpg", width=300)
+    with col3:
+        st.image("images/Diabetes.jpg", width=300)
+
     st.markdown("</div>", unsafe_allow_html=True)
 
     # Project 2: Diabetes Prediction App
-    st.markdown("<div class='project-section'>", unsafe_allow_html=True)
+    st.markdown("<div class='project-card'>", unsafe_allow_html=True)
+    st.markdown("<div class='project-content'>", unsafe_allow_html=True)
     st.markdown("<h3>Diabetes Prediction App</h3>", unsafe_allow_html=True)
-    st.image("your_image_link_2.jpg", caption="Diabetes Prediction App", use_column_width=True)  # Add your image link here
-    st.markdown("""<p>This web application predicts the likelihood of diabetes based on user input data. Built using Streamlit and Scikit-learn, it demonstrates my expertise in developing data-driven applications.</p>
-    <a href="https://github.com/uwais/Diabetes-Prediction-App" target="_blank">View GitHub Repository</a>""", unsafe_allow_html=True)
+    st.markdown("<p class='explanation'>This web application predicts the likelihood of diabetes based on user input data.</p>", unsafe_allow_html=True)
+    st.markdown("<p>Built using Streamlit and Scikit-learn, it demonstrates my expertise in developing data-driven applications.</p>", unsafe_allow_html=True)
+    st.markdown("""<a href="https://github.com/uwais/Diabetes-Prediction-App" target="_blank">GitHub Repository</a>
+    <a href="https://your_streamlit_app_link" target="_blank">Streamlit App</a>""", unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
 
-    st.markdown("</div>", unsafe_allow_html=True)  # Closing the projects container
+    # Multiple images for Project 2 in columns
+    col1, col2, col3 = st.columns(3)  # Adjust the number of columns based on the number of images
+    with col1:
+        st.image("images/diabetes_prediction_1.jpg", width=100)
+    with col2:
+        st.image("images/diabetes_prediction_2.jpg", width=100)
+    with col3:
+        st.image("images/diabetes_prediction_3.jpg", width=100)
+
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    # Project 3: IPL Match Winner Prediction
+    st.markdown("<div class='project-card'>", unsafe_allow_html=True)
+    st.markdown("<div class='project-content'>", unsafe_allow_html=True)
+    st.markdown("<h3>IPL Match Winner Prediction</h3>", unsafe_allow_html=True)
+    st.markdown("<p class='explanation'>This project uses machine learning to predict the winner of an IPL match based on past match data.</p>", unsafe_allow_html=True)
+    st.markdown("<p>I applied different algorithms to train the model and evaluated its performance.</p>", unsafe_allow_html=True)
+    st.markdown("""<a href="https://github.com/uwais/IPL-Match-Winner-Prediction" target="_blank">GitHub Repository</a>
+    <a href="https://your_streamlit_app_link" target="_blank">Streamlit App</a>""", unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    # Multiple images for Project 3 in columns
+    col1, col2, col3 = st.columns(3)  # Adjust the number of columns based on the number of images
+    with col1:
+        st.image("images/ipl_prediction_1.jpg", width=100)
+    with col2:
+        st.image("images/ipl_prediction_2.jpg", width=100)
+    with col3:
+        st.image("images/ipl_prediction_3.jpg", width=100)
+
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    # Project 4: Loan Status Prediction
+    st.markdown("<div class='project-card'>", unsafe_allow_html=True)
+    st.markdown("<div class='project-content'>", unsafe_allow_html=True)
+    st.markdown("<h3>Loan Status Prediction</h3>", unsafe_allow_html=True)
+    st.markdown("<p class='explanation'>This project predicts the loan approval status based on applicant details.</p>", unsafe_allow_html=True)
+    st.markdown("<p>Implemented using logistic regression and showcased using Streamlit for user interaction.</p>", unsafe_allow_html=True)
+    st.markdown("""<a href="https://github.com/uwais/Loan-Status-Prediction" target="_blank">GitHub Repository</a>
+    <a href="https://your_streamlit_app_link" target="_blank">Streamlit App</a>""", unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    # Multiple images for Project 4 in columns
+    col1, col2, col3 = st.columns(3)  # Adjust the number of columns based on the number of images
+    with col1:
+        st.image("images/loan_prediction_1.jpg", width=100)
+    with col2:
+        st.image("images/loan_prediction_2.jpg", width=100)
+    with col3:
+        st.image("images/loan_prediction_3.jpg", width=100)
+
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    # Closing the projects container
+    st.markdown("</div>", unsafe_allow_html=True)
 
 
 
-
-
-
-
-    # Add more projects following the same structure as above
 
 
 elif page == "Contact":
@@ -584,12 +657,13 @@ elif page == "Contact":
     }
 
     .contact-section h2 {
-        font-family: 'Montserrat', sans-serif;  /* Clean, modern font */
-        font-size: 34px;
-        color: #2c3e50;  /* Slightly darker heading color */
+        font-family: 'Montserrat', sans-serif;  /* Modern and professional font */
+        font-size: 36px;  /* Slightly reduced font size */
+        color: #2c3e50;  /* Dark color for the title */
         font-weight: 700;
-        margin-bottom: 20px;
-        text-transform: uppercase;  /* Capitalize for emphasis */
+        margin-bottom: 15px;  /* Reduced margin */
+        text-transform: uppercase;  /* Capitalize the title */
+        letter-spacing: 1px;  /* Reduced letter-spacing */
     }
 
     .contact-section p {
