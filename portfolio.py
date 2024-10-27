@@ -550,30 +550,41 @@ elif page == "Projects":
     # Project 1: YouTube Spam Detection
     st.markdown("<div class='project-card'>", unsafe_allow_html=True)
     st.markdown("<div class='project-content'>", unsafe_allow_html=True)
-    st.markdown("<h3>YouTube Spam Detection</h3>", unsafe_allow_html=True)
-    st.markdown("<p class='explanation'>This project demonstrates my ability to work with machine learning techniques to detect spam in YouTube comments.</p>", unsafe_allow_html=True)
-    st.markdown("<p>I utilized exploratory data analysis (EDA) to understand the data better and deployed a predictive model using Streamlit.</p>", unsafe_allow_html=True)
-    st.markdown("""<a href="https://github.com/uwais/YouTube-Spam-Detection" target="_blank">GitHub Repository</a>
-    <a href="https://your_streamlit_app_link" target="_blank">Streamlit App</a>""", unsafe_allow_html=True)
+    st.markdown("<h3>Loan Prediction Web </h3>", unsafe_allow_html=True)
+    st.markdown("<p class='explanation'>This project demonstrates my ability to work with machine learning techniques to identifying the loan ability peoples .</p>", unsafe_allow_html=True)
+    st.markdown("<p>  Purpose  :   To predict whether a loan applicant will be able to repay a loan or not, based on their financial and personal data . </p>", unsafe_allow_html=True)
+    st.markdown("<P><P>", unsafe_allow_html=True)
+    st.markdown("<P> uses : <P>", unsafe_allow_html=True)
+    st.markdown("<P> * Banks & Financial Institutions :  Helps in faster, data-driven loan approvals, reducing the risk of defaults <P>", unsafe_allow_html=True)
+    st.markdown("<P> * Applicants : Provides a fair assessment based on data, allowing more reliable access to credit for those likely to repay .<P>", unsafe_allow_html=True)
+    st.markdown("<P> * Credit Risk Management : Assists in identifying high-risk applicants, helping lenders reduce losses. <P>", unsafe_allow_html=True)
+    st.markdown("<P> <P>", unsafe_allow_html=True)
+    
+    st.markdown("""<a href="https://github.com/muhammadhuwais/LOAN_PREDICTION_STREAMLIT" target="_blank">GitHub Repository</a>
+    <a href="https://loanpredictionapp-tlppkydn2b2gccn3ccxhqi.streamlit.app/" target="_blank">Streamlit App</a>""", unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
 
     # Multiple images for Project 1 in columns
     col1, col2, col3 = st.columns(3)  # Adjust the number of columns based on the number of images
     with col1:
-        st.image("images/motivational-theme-vp11.jpg", width=300)
+        st.image("images2\loan 1.jpeg", width=300)
     with col2:
-        st.image("images/Diabetes.jpg", width=300)
+        st.image("images2\loan 3.webp", width=300)
     with col3:
-        st.image("images/Diabetes.jpg", width=300)
+        st.image("images2\loan 2.webp", width=300)
 
     st.markdown("</div>", unsafe_allow_html=True)
 
     # Project 2: Diabetes Prediction App
     st.markdown("<div class='project-card'>", unsafe_allow_html=True)
     st.markdown("<div class='project-content'>", unsafe_allow_html=True)
-    st.markdown("<h3>Diabetes Prediction App</h3>", unsafe_allow_html=True)
-    st.markdown("<p class='explanation'>This web application predicts the likelihood of diabetes based on user input data.</p>", unsafe_allow_html=True)
-    st.markdown("<p>Built using Streamlit and Scikit-learn, it demonstrates my expertise in developing data-driven applications.</p>", unsafe_allow_html=True)
+    st.markdown("<h3>Diabetes identifiying web </h3>", unsafe_allow_html=True)
+    st.markdown("<p class='explanation'> This web application predicts the likelihood of diabetes based on user input data.</p>", unsafe_allow_html=True)
+    st.markdown("<P> Purpose : To determine the likelihood of a patient having diabetes based on health indicators like glucose levels, blood pressure, and age. <P>", unsafe_allow_html=True)
+    st.markdown("<P> Uses :<P>", unsafe_allow_html=True)
+    st.markdown("<P>* Healthcare Providers : Allows early detection of diabetes, enabling timely intervention and better patient care.<P>", unsafe_allow_html=True)
+    st.markdown("<P>* Patients : Helps individuals assess their risk and take preventive actions.<P>", unsafe_allow_html=True)
+    st.markdown("<P>* Public Health: Supports health professionals in understanding diabetes trends in populations and planning resources accordingly. <P>", unsafe_allow_html=True)
     st.markdown("""<a href="https://github.com/uwais/Diabetes-Prediction-App" target="_blank">GitHub Repository</a>
     <a href="https://your_streamlit_app_link" target="_blank">Streamlit App</a>""", unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
@@ -595,6 +606,12 @@ elif page == "Projects":
     st.markdown("<h3>IPL Match Winner Prediction</h3>", unsafe_allow_html=True)
     st.markdown("<p class='explanation'>This project uses machine learning to predict the winner of an IPL match based on past match data.</p>", unsafe_allow_html=True)
     st.markdown("<p>I applied different algorithms to train the model and evaluated its performance.</p>", unsafe_allow_html=True)
+    st.markdown("<p></p>", unsafe_allow_html=True)
+    st.markdown("<p></p>", unsafe_allow_html=True)
+    st.markdown("<p></p>", unsafe_allow_html=True)
+    st.markdown("<p></p>", unsafe_allow_html=True)
+    st.markdown("<p></p>", unsafe_allow_html=True)
+    st.markdown("<p></p>", unsafe_allow_html=True)
     st.markdown("""<a href="https://github.com/uwais/IPL-Match-Winner-Prediction" target="_blank">GitHub Repository</a>
     <a href="https://your_streamlit_app_link" target="_blank">Streamlit App</a>""", unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
@@ -616,6 +633,12 @@ elif page == "Projects":
     st.markdown("<h3>Loan Status Prediction</h3>", unsafe_allow_html=True)
     st.markdown("<p class='explanation'>This project predicts the loan approval status based on applicant details.</p>", unsafe_allow_html=True)
     st.markdown("<p>Implemented using logistic regression and showcased using Streamlit for user interaction.</p>", unsafe_allow_html=True)
+    st.markdown("<p></p>", unsafe_allow_html=True)
+    st.markdown("<p></p>", unsafe_allow_html=True)
+    st.markdown("<p></p>", unsafe_allow_html=True)
+    st.markdown("<p></p>", unsafe_allow_html=True)
+    st.markdown("<p></p>", unsafe_allow_html=True)
+    st.markdown("<p></p>", unsafe_allow_html=True)
     st.markdown("""<a href="https://github.com/uwais/Loan-Status-Prediction" target="_blank">GitHub Repository</a>
     <a href="https://your_streamlit_app_link" target="_blank">Streamlit App</a>""", unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
