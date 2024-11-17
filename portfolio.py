@@ -592,18 +592,18 @@ elif page == "Projects":
     # Multiple images for Project 2 in columns
     col1, col2, col3 = st.columns(3)  # Adjust the number of columns based on the number of images
     with col1:
-        st.image("images/diabetes_prediction_1.jpg", width=100)
+        st.image("images3\dia 1.jpeg", width=300)
     with col2:
-        st.image("images/diabetes_prediction_2.jpg", width=100)
+        st.image("images3\dia 2.jpg", width=300)
     with col3:
-        st.image("images/diabetes_prediction_3.jpg", width=100)
+        st.image("images3\Diabetes.jpg", width=300)
 
     st.markdown("</div>", unsafe_allow_html=True)
 
-    # Project 3: IPL Match Winner Prediction
+    # Project 3: Wine data prediction
     st.markdown("<div class='project-card'>", unsafe_allow_html=True)
     st.markdown("<div class='project-content'>", unsafe_allow_html=True)
-    st.markdown("<h3>IPL Match Winner Prediction</h3>", unsafe_allow_html=True)
+    st.markdown("<h3>Wine prepration web </h3>", unsafe_allow_html=True)
     st.markdown("<p class='explanation'>This project uses machine learning to predict the winner of an IPL match based on past match data.</p>", unsafe_allow_html=True)
     st.markdown("<p>I applied different algorithms to train the model and evaluated its performance.</p>", unsafe_allow_html=True)
     st.markdown("<p></p>", unsafe_allow_html=True)
